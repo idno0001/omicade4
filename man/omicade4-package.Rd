@@ -26,7 +26,7 @@ omics datasets.
 \author{
 Chen Meng, Aedin Culhane, Amin M. Gholami
 
-Maintainer: Chen Meng <chen.meng@tum.de>
+Maintainer: Chen Meng <mengchen18@gmail.com>
 }
 
 \references{
