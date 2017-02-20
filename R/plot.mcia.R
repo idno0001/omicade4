@@ -10,9 +10,13 @@ function(x, axes=1:2, sample.lab=TRUE, sample.legend=TRUE, sample.color=1, pheno
   cov2 <- mcoin$mcoa$cov2[, axes] #pseueig
   
 
-  
-  if (!length(sample.color) %in% c(1, nrow(mcoin$mcoa$SynVar)))
-    stop("length of sample.color should be either 1 or # of samples")
+
+  possibleNumColours <- c(1, nrow(mcoin$mcoa$SynVar))
+  if(!is.null(phenovec))
+    possibleNumColours <- c(possibleNumColours, length(levels(phenovec)))
+  if (!length(sample.color) %in% possibleNumColours)
+    stop("length of sample.color should be either 1, length of ",
+         "levels(phenovec), or # of samples")
   if (!length(df.color) %in% c(1, ndata))
     stop("length of df.color should be either 1 or # of samples")
   
